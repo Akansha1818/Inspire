@@ -1,0 +1,16 @@
+<%- include('./partials/header.ejs') %>
+<div class="w-full h-screen bg-cover bg-center bg-[url(https://images.unsplash.com/photo-1530177150700-84cd9a3b059b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] flex items-center justify-center">
+    <div class="w-82 bg-white px-12 py-10 rounded-md">
+        <h1 class="text-3xl tracking-tighter capitalize leading-none mb-5">Welcome to Inspire</h1>
+        <form class="text-sm" action="/login" method="post">
+            <label for="email">Email address</label>
+            <input class="block w-full px-4 text-md py-2 rounded-md border-2" type="email" name="email" placeholder="Email">
+            <label for="password">Password</label>
+            <input class="block w-full px-4 text-md py-2 rounded-md border-2" type="password" name="password" placeholder="Password">
+            <input class="block w-full bg-red-600 text-white m-auto mt-5 py-2 rounded-lg cursor-pointer" type="submit" value="Login">
+          </form>
+        
+        <a href="/register" class="mt-10 inline-block font-semibold text-sm text-zinc-500 ml-10">Don't have an account?</a>
+    </div>
+</div>
+<%- include('./partials/footer.ejs') %>

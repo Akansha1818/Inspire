@@ -1,0 +1,40 @@
+<%- include('./partials/header.ejs') %>
+<div class="w-full flex-column items-center mt-0 inline-block bg-zinc-700">
+    <form action="/fileupload" hidden id="uploadform" method="post" enctype="multipart/form-data">
+        <input type="file" name="image">
+    </form>
+    <div class="w-82 px-12 py-10 profdets text-white text-center mt-7">
+        <div class="relative">
+            <span class="absolute left-[48vw] top-[12vh] w-8 h-8 bg-white rounded-full flex justify-center items-center cursor-pointer">
+                <i id="uploadicon" class="fa-solid fa-pencil text-black"></i>
+            </span>
+            <div class="w-28 h-28 bg-zinc-200 rounded-full m-auto">
+                <img src="/images/uploads/<%= user.profileImage %>" alt="" class="w-full h-full object-cover rounded-full">
+            </div>
+        </div>
+        <p class="font-semibold text-2xl"><%= user.fullname%></p>
+        <p class="text-md">@<%= user.username%></p>
+        <a href="/edit" class="px-5 mt-2 inline-block py-2 rounded-full text-xs font-semibold text-black bg-white">Edit</a>
+        <br><br>
+        <a href="/add" class="mt-4 px-4 py-1 rounded-lg bg-red-600 text-md">Make new post</a>
+    </div>
+    <div class="cards flex flex-wrap gap-10 p-5 text-white">
+        <div>
+            <div class="w-52 h-40 bg-zinc-200 rounded-lg overflow-hidden">
+                <img src="/images/uploads/<%= user?.posts[0]?.image %>" alt="" class="w-full h-full object-cover">
+            </div>
+            <a href="/show/posts" class="inline-block text-xl font-semibold mt-3">Your Uploaded Pins</a>
+            <h5 class="text-sm font-medium opacity-80"><%= user.posts.length %> Pins</h5>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelector('#uploadicon').addEventListener("click", ()=>{
+        document.querySelector('#uploadform input').click();
+    })
+
+    document.querySelector('#uploadform input').addEventListener("change", ()=>{
+        document.querySelector('#uploadform').submit();
+    })
+</script>
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,22 @@
+<%- include('./partials/header.ejs') %>
+<div class="w-full h-screen bg-cover bg-center bg-[url(https://images.unsplash.com/photo-1530177150700-84cd9a3b059b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] flex items-center justify-center">
+    <div class="w-82 bg-white px-12 py-8 rounded-md">
+        <h1 class="text-3xl tracking-tighter capitalize leading-none mb-5">Create New Account</h1>
+        <form class="text-sm" action="/profile" method="post">
+            <label for="text">Username:</label>
+            <input class="block w-full px-4 text-md py-2 rounded-md border-2 my-2" type="text" name="username" placeholder="Your Username">
+            <label for="text">Full Name:</label>
+            <input class="block w-full px-4 text-md py-2 rounded-md border-2 my-2" type="text" name="fullname" placeholder="Your Name">
+            <label for="text">Email address:</label>
+            <input class="block w-full px-4 text-md py-2 rounded-md border-2 my-2" type="email" name="email" placeholder="Email">
+            <label for="text">Password:</label>
+            <input class="block w-full px-4 text-md py-2 rounded-md border-2 my-2" type="password" name="password" placeholder="Password">
+            <label for="text">Contact:</label>
+            <input class="block w-full px-4 text-md py-2 rounded-md border-2 my-2" type="number" name="number" placeholder="Contact">
+            <input class="block w-full bg-red-600 text-white m-auto mt-5 py-2 rounded-lg cursor-pointer my-2" type="submit" value="Create Account">
+            <a href="#" class="mt-2 inline-block font-semibold text-sm text-zinc-500">Forgot Password?</a>
+        </form>
+        <a href="/" class="mt-8 inline-block font-semibold text-sm text-zinc-500 ml-10">Already have an account?</a>
+    </div>
+</div>
+<%- include('./partials/footer.ejs') %>
